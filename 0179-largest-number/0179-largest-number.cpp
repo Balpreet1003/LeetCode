@@ -7,9 +7,6 @@ private:
     }
 public:
     string largestNumber(vector<int>& nums) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
 
         vector<string>snums;
         for(auto i:nums){
