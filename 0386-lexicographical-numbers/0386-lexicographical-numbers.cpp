@@ -1,11 +1,14 @@
 class Solution {
-    static bool cmd(int a,int b){return to_string(a)<to_string(b);}
+    void dfs(int temp,int&n,vector<int>&ans){
+        if(temp>n)return;
+        ans.push_back(temp);
+        dfs(temp*10,n,ans);
+        if(temp%10!=9)dfs(temp+1,n,ans);
+    }
 public:
     vector<int> lexicalOrder(int n) {
         vector<int>ans;
-        for(int i=1;i<=n;i++)ans.push_back(i);
-        sort(ans.begin(),ans.end(),cmd);
-
+        dfs(1,n,ans);
         return ans;
     }
 };
