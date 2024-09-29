@@ -1,6 +1,9 @@
 class Solution {
 public:
     string removeOuterParentheses(string s) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
         stack<pair<char,int>>st;
         int i=0;
         for(char ch:s){
