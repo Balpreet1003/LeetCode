@@ -1,35 +1,24 @@
 class Solution {
 public:
     int myAtoi(string s) {
-        long long ans=0,i=0,sign=1;
-        bool trace=true;
-        while(i<s.length()){
-            if(s[i]!=' ')
-                break;
+        int i=0;
+        while(s[i]==' ')i++;
+        bool sign =0;
+        if(s[i]=='+' || s[i]=='-'){
+            sign=s[i]=='-';
             i++;
         }
-        if(s[i]=='-' && trace){
-            sign=-1;
-            i++;
-            trace=false;
-        }
-        if(s[i]=='+' && trace)
-            i++;
-        while(i<s.length()){
-            if(isdigit(s[i])){
-                ans=ans*10+(s[i]-'0');
-                if(ans>INT_MAX && sign<0)
-                    return INT_MIN;
-                if(ans>INT_MAX && sign>0)
-                    return INT_MAX;
-            }
-            else
-                break;
+        long long ans=0;
+        while(i<s.length() && isdigit(s[i])){
+            long long x=sign?ans*(-1):ans;
+            if(x>INT_MAX)return INT_MAX;
+            if(x<INT_MIN)return INT_MIN;
+            ans=ans*10+(long long)(s[i]-'0');
             i++;
         }
-        
-        ans*=sign;
-        
+        ans=sign?ans*(-1):ans;
+        if(ans>INT_MAX)return INT_MAX;
+        if(ans<INT_MIN)return INT_MIN;
         return ans;
     }
 };
