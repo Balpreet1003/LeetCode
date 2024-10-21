@@ -2,6 +2,9 @@ class Solution {
 public:
     int i=0;
     bool parseBoolExpr(const string& expr) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
         char c=expr[i++];
         if (c=='t') return 1;
         if (c=='f') return 0;
