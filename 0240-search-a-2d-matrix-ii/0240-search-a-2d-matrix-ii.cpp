@@ -4,15 +4,12 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(0);
         cout.tie(0);
-        int n=a.size();
-        for(int i=0;i<n;i++){
-            int j=0,k=a[i].size()-1;
-            while(j<=k){
-                int mid=(j+k)/2;
-                if(a[i][mid]==t)return 1;
-                if(a[i][mid]>t)k=mid-1;
-                else j=mid+1;
-            }
+        
+        int i=0,j=a[0].size()-1;
+        while(i<a.size() && j>=0){
+            if(a[i][j]==t)return 1;
+            if(a[i][j]>t)j--;
+            else i++;
         }
         return 0;
     }
