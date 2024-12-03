@@ -7,7 +7,7 @@ public:
         // }
         // return s;
 
-        //optimoise solution
+        //optimise solution
         string ans="";
         int j=0;
         for(int i=0;i<s.length();i++){
