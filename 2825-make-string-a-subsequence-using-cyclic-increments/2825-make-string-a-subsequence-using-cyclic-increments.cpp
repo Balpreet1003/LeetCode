@@ -1,20 +1,12 @@
 class Solution {
 public:
-    static bool canMakeSubsequence(string& source, string& target) {
-        const int srcLen = source.size(), tgtLen = target.size();
-        char targetChar = target[0];
-        
-        int srcIdx, tgtIdx;
-        for(srcIdx = 0, tgtIdx = 0; srcIdx < srcLen && tgtIdx < tgtLen; srcIdx++) {
-            char srcChar = source[srcIdx];
-            
-            if (srcChar == targetChar || 
-                srcChar + 1 == targetChar || 
-                (srcChar == 'z' && targetChar == 'a')) {
-                targetChar = target[++tgtIdx];
-            }
+    bool canMakeSubsequence(string s, string s1) {
+        int j=0;
+        for(int i=0;i<s.length() && j<s1.length();i++){
+            int x=(s[i]=='z')?-1:s[i]-'a';
+            int y=s1[j]-'a';
+            if((s[i]==s1[j]) || (y-x==1))j++;
         }
-        
-        return tgtIdx == tgtLen;
+        return j==s1.length()?true:false;
     }
 };
