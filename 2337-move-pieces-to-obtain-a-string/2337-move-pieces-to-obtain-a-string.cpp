@@ -1,40 +1,24 @@
 class Solution {
 public:
-    bool canChange(string start, string target) {
-        if (start == target) {
-            return true;
+    bool canChange(string a, string t) {
+        int i = 0, j = 0, n = a.size();
+        while (i < n || j < n) {
+            while (i < n && a[i] == '_') i++;
+            while (j < n && t[j] == '_') j++;
+            if (i == n || j == n) return i == n && j == n;
+            if (a[i] != t[j]) return false;
+            if (a[i] == 'L' && j > i) return false;
+            if (a[i] == 'R' && j < i) return false;
+            i++;
+            j++;
         }
-        int waitL = 0;
-        int waitR = 0;
-        
-        for (int i = 0; i < start.length(); i++) {
-            char curr = start[i];
-            char goal = target[i];
-            if (curr == 'R') {
-                if (waitL > 0) {
-                    return false;
-                }
-                waitR++;
-            }
-            if (goal == 'L') {
-                if (waitR > 0) {
-                    return false;
-                }
-                waitL++;
-            }
-            if (goal == 'R') {
-                if (waitR == 0) {
-                    return false;
-                }
-                waitR--;
-            }
-            if (curr == 'L') {
-                if (waitL == 0) {
-                    return false;
-                }
-                waitL--;
-            }
-        }
-        return waitL == 0 && waitR == 0;
+        return true;
     }
 };
+
+auto init = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 'c';
+}();
