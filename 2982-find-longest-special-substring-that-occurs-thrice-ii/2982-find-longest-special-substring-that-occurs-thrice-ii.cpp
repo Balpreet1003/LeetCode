@@ -8,6 +8,9 @@ class Solution {
     }
 public:
     int maximumLength(string s) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         vector<vector<int>>a(26,vector<int>(3,-1));
         int n=s.length();
         int x=1;
@@ -15,8 +18,8 @@ public:
         updateVector(a,(int)(ch-'a'),x);
         bool flag=false;
         for(int i=1;i<n;i++){
-            int y=(int)(ch-'a');
             if(s[i]==ch){
+                int y=(int)(ch-'a');
                 x++;
                 updateVector(a,y,x);
             }
@@ -24,12 +27,9 @@ public:
                 flag=true;
                 ch=s[i];
                 x=1;
+                int y=(int)(ch-'a');
                 updateVector(a,y,x);
             }
-        }
-        if(flag)updateVector(a,(int)(ch-'a'),x);
-        for(int i=0;i<26;i++){
-            cout<<a[i][0]<<" "<<a[i][1]<<" "<<a[i][2]<<endl;
         }
         int ans=-1;
         for(auto i:a){
