@@ -1,6 +1,10 @@
 class Solution {
 public:
     string repeatLimitedString(string s, int repeatLimit) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+        
         unordered_map<char,int>m;
         priority_queue<pair<char,int>>pq;
         for(char ch:s){
