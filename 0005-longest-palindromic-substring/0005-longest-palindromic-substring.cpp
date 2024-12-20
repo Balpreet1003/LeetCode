@@ -1,25 +1,25 @@
 class Solution {
-private:
-    bool isPalindrom(string & s,int i,int j,vector<vector<int>>& dp){
-        //bc
-        if(i>=j){
-            return true;
-        }
-        if(dp[i][j]!=-1)
-            return dp[i][j];
-        //1 case
-        dp[i][j]= s[i]==s[j] ? isPalindrom(s,i+1,j-1,dp): false;
-        return dp[i][j];
-    }
 public:
     string longestPalindrome(string s) {
-        int n=s.length();
+        int x=0,n=s.size();
         string ans="";
-        vector<vector<int>>dp(n,vector<int>(n,-1));
         for(int i=0;i<n;i++){
+            string s1="";
             for(int j=i;j<n;j++){
-                if(ans.length()<(j-i+1) && isPalindrom(s,i,j,dp)){
-                    ans=s.substr(i,j-i+1);
+                s1+=s[j];
+                int l=0,r=s1.length()-1;
+                bool cond=true;
+                while(l<r){
+                    if(s1[l]!=s1[r]){
+                        cond=false;
+                        break;
+                    }
+                    l++;
+                    r--;
+                }
+                if(cond && x<s1.length()){
+                    x=s1.length();
+                    ans=s1;
                 }
             }
         }
