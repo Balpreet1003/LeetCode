@@ -1,12 +1,9 @@
 class Solution {
-    vector<vector<double>> dp;
-
 public:
     int numDistinct(string s, string t) {
         int n = s.length(), m = t.length();
-        dp = vector<vector<double>>(n + 1, vector<double>(m + 1, 0));
         vector<double> curr(m + 1, 0), prev(m + 1, 0);
-
+        
         curr[0] = 1;
         prev[0] = 1;
 
