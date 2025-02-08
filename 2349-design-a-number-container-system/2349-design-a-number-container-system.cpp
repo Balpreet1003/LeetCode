@@ -1,0 +1,33 @@
+class NumberContainers {
+    unordered_map<int,int>traceIndex;
+    unordered_map<int,priority_queue<int,vector<int>,greater<int>>>m;
+
+public:
+    NumberContainers() {
+        
+    }
+    
+    void change(int index, int number) {
+        traceIndex[index]=number;
+        m[number].push(index);
+    }
+    
+    int find(int number) {
+        if(m.find(number)==m.end())return -1;
+        while(!m[number].empty()){
+            int i=m[number].top();
+            if(traceIndex[i]==number){
+                return i;
+            }
+            m[number].pop();
+        }
+        return -1;
+    }
+};
+
+/**
+ * Your NumberContainers object will be instantiated and called as such:
+ * NumberContainers* obj = new NumberContainers();
+ * obj->change(index,number);
+ * int param_2 = obj->find(number);
+ */
