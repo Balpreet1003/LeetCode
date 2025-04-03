@@ -4,11 +4,6 @@ public:
         int n=nums.size();
         vector<int>left,right;
         int maxi=0;
-        for(int i:nums){
-            left.push_back(maxi);
-            maxi=max(maxi,i);
-        }
-        maxi=0;
         for(int i=n-1;i>=0;i--){
             right.push_back(maxi);
             maxi=max(maxi,nums[i]);
@@ -17,9 +12,11 @@ public:
         while(i<j){
             swap(right[i++],right[j--]);
         }
+        maxi=nums[0];
         long long ans=0;
         for(int i=1;i<n-1;i++){
-            ans=max(ans,(long long)(left[i]-nums[i])*right[i]);
+            ans=max(ans,(long long)(maxi-nums[i])*right[i]);
+            maxi=max(maxi,nums[i]);
         }
         return ans;
     }
