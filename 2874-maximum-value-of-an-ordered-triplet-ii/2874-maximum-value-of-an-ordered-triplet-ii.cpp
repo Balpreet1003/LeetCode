@@ -2,15 +2,11 @@ class Solution {
 public:
     long long maximumTripletValue(vector<int>& nums) {
         int n=nums.size();
-        vector<int>left,right;
+        vector<int>right(n);
         int maxi=0;
         for(int i=n-1;i>=0;i--){
-            right.push_back(maxi);
+            right[i]=maxi;
             maxi=max(maxi,nums[i]);
-        }
-        int i=0,j=n-1;
-        while(i<j){
-            swap(right[i++],right[j--]);
         }
         maxi=nums[0];
         long long ans=0;
