@@ -20,27 +20,25 @@ public:
         return dp[index][target];
     }
 
-    bool ifPartition(vector<int>&nums,int & target){
+    bool ifPartition(vector<int>&nums,int target){
         int n=nums.size();
-        // vector<vector<int> >dp(n+1,vector<int>(target+1,0));
-        vector<int>curr(target+1,0);
-        vector<int>next(target+1,0);
+        vector<vector<int> >dp(n+1,vector<int>(target+1,0));
 
-        curr[0]=1;
-        next[0]=1;
+        for(int i=0;i<n;i++){
+            dp[i][0]=1;
+        }
 
         for(int index=n-1;index>=0;index--){
             for(int tar=1;tar<=target;tar++){
                 bool include=0;
                 if((tar-nums[index])>=0)
-                    include = next[tar-nums[index]];
-                bool exclude = next[tar];
-                curr[tar] = (include || exclude);   
+                    include = dp[index+1][tar-nums[index]];
+                bool exclude = dp[index+1][tar];
+                dp[index][tar] = (include || exclude);
+                
             }
-            //shift
-            next=curr;
         } 
-        return curr[target];
+        return dp[0][target];
     }
 
     bool canPartition(vector<int>& nums) {
