@@ -12,7 +12,7 @@ public:
         for (int j = 0; j < n; j++) {
             m[nums[j]]++;
             while (m.size() == totalUnique) {
-                ans += (n - j); 
+                ans += (n - j);
                 m[nums[i]]--;
                 if (m[nums[i]] == 0)
                     m.erase(nums[i]);
