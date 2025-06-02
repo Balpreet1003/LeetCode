@@ -1,46 +1,40 @@
 class Solution {
+    int dx[4]={0,1,0,-1};
+    int dy[4]={1,0,-1,0};
 public:
     int orangesRotting(vector<vector<int>>& grid) {
-        queue<pair<pair<int,int>,int>>q;
-        vector<vector<int>>arr=grid;
-        int count=0,ansTime=0,freshCount=0;
-
-        for(int row=0;row<arr.size();row++){
-            for(int col=0;col<arr[0].size();col++){
-                if(arr[row][col]==2){
-                    //rottten orange
-                    q.push({{row,col},0});
+        int ans=0,n=grid.size(),m=grid[0].size();
+        vector<vector<int>>time(n,vector<int>(m,-1));
+        queue<pair<int,int>>q;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(grid[i][j]==2){
+                    q.push({i,j});
+                    time[i][j]=0;
                 }
-                if(arr[row][col]==1)
-                    freshCount++;
             }
         }
+        
         while(!q.empty()){
-            auto fNode=q.front();
+            auto [i,j]=q.front();
             q.pop();
 
-            int x=fNode.first.first;
-            int y=fNode.first.second;
-            int time=fNode.second;
-
-            int dx[]={-1,0,1,0};
-            int dy[]={0,1,0,-1};
-
-            for(int i=0;i<4;i++){
-                int newX=x+dx[i];
-                int newY=y+dy[i];
-
-                if(newX>=0 && newY>=0 && newX<arr.size() && newY<arr[0].size() && arr[newX][newY]==1){
-                    ansTime=max(ansTime,time+1);
-                    q.push({{newX,newY},time+1});
-                    //mark rotten
-                    arr[newX][newY]=2;
-                    freshCount--;
+            for(int k=0;k<4;k++){
+                int i1=i+dx[k],j1=j+dy[k];
+                if(i1>=0 && i1<n && j1>=0 && j1<m && grid[i1][j1]==1){
+                    grid[i1][j1]=2;
+                    q.push({i1,j1});
+                    time[i1][j1]=time[i][j]+1;
                 }
             }
         }
-        if(freshCount!=0)
-            return -1;
-        return ansTime;
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(grid[i][j]==1)return -1;
+                ans=max(ans,time[i][j]);
+            }
+        }
+        return ans;
     }
 };
