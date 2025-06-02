@@ -1,31 +1,35 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_map<string,int>m;
-        for(string s:wordList)m[s]=1;
-        queue<string>q;
-        q.push(beginWord);
-        if(m.find(beginWord)!=m.end()){
-            m.erase(beginWord);
+        queue<pair<string,int>>q;
+        unordered_map<string,int>word,visited;
+        bool flag=false;
+        for(string s:wordList){
+            word[s]++;
+            if(s==endWord)flag=true;
         }
-        int ans=0;
+        if(!flag)return 0;
+
+        q.push({beginWord,1});
+        visited[beginWord]=1;
         while(!q.empty()){
-            int len=q.size();
-            ans++;
-            while(len--){
-                string s=q.front();
-                q.pop();
-                for(int i=0;i<s.length();i++){
-                    string s1=s;
-                    for(int j=0;j<26;j++){
-                        s1[i]=char((int)('a')+j);
-                        if(m.find(s1)!=m.end()){
-                            if(s1==endWord)return ans+1;
-                            q.push(s1);
-                            m.erase(s1);
+            auto [node,h]=q.front();
+            q.pop();
+
+            if(node==endWord)return h;
+
+            for(int i=0;i<node.length();i++){
+                char initial=node[i];
+                for(int j=0;j<26;j++){
+                    if(initial!=char('a'+j)){
+                        node[i]=('a'+j);
+                        if(visited.find(node)==visited.end() && word.find(node)!=word.end()){
+                            q.push({node,h+1});
+                            visited[node]=1;
                         }
                     }
                 }
+                node[i]=initial;
             }
         }
         return 0;
