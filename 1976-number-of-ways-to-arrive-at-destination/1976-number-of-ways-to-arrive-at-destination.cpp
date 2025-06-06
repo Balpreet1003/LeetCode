@@ -1,41 +1,51 @@
 class Solution {
-public:
-    int countPaths(int n, vector<vector<int>>& roads) {
-        vector<vector<pair<int, int>>> graph(n);
-        for (const auto& road : roads) {
-            int u = road[0], v = road[1], time = road[2];
-            graph[u].emplace_back(v, time);
-            graph[v].emplace_back(u, time);
-        }
-
-        vector<long long> dist(n, LLONG_MAX);
-        vector<int> ways(n, 0);
-
-        dist[0] = 0;
-        ways[0] = 1;
-
-        priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> pq;
-        pq.emplace(0, 0);
-
-        const int MOD = 1e9 + 7;
-
-        while (!pq.empty()) {
-            auto [d, node] = pq.top();
+    const int MOD=1e9+7;
+    int get_short_time(vector<vector<pair<int,int>>>&adj, int s,int& n){
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+        vector<int>dis(n,INT_MAX);
+        pq.push({0,0});
+        while(!pq.empty()){
+            auto [t,node]=pq.top();
             pq.pop();
 
-            if (d > dist[node]) continue;
-
-            for (const auto& [neighbor, time] : graph[node]) {
-                if (dist[node] + time < dist[neighbor]) {
-                    dist[neighbor] = dist[node] + time;
-                    ways[neighbor] = ways[node];
-                    pq.emplace(dist[neighbor], neighbor);
-                } else if (dist[node] + time == dist[neighbor]) {
-                    ways[neighbor] = (ways[neighbor] + ways[node]) % MOD;
+            for(auto &[x,t1]:adj[node]){
+                if(t+t1<dis[x]){
+                    dis[x]=t+t1;
+                    pq.push({t+t1,x});
                 }
             }
         }
+        return dis[n-1];
+    }
+public:
+    int countPaths(int n, vector<vector<int>>& roads) {
+        vector<vector<pair<int,int>>>adj(n);
+        for(auto x:roads){
+            adj[x[0]].push_back({x[1],x[2]});
+            adj[x[1]].push_back({x[0],x[2]});
+        }
 
-        return ways[n - 1];
+        int short_time=get_short_time(adj,0,n);
+
+        queue<pair<int,int>>q;
+        q.push({0,0});
+        int ans=0;
+
+        while(!q.empty()){
+            auto [node,t]=q.front();
+            q.pop();
+
+            if(node==n-1){
+                ans=(ans+1)%MOD;
+                continue;
+            }
+            if(t>short_time)continue;
+            for(auto &[x,t1]:adj[node]){
+                if(t + t1 <= short_time){
+                    q.push({x, t + t1});
+                }
+            }
+        }
+        return ans;
     }
 };
