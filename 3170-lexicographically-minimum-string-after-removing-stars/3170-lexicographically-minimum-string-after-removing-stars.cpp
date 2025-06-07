@@ -9,20 +9,19 @@ public:
     string clearStars(string s) {
         int n=s.length();
         priority_queue<pair<char,int>,vector<pair<char,int>>,cmd>pq;
-        vector<bool>trace(n,false);
+        vector<bool>trace(n,true);
 
         for(int i=0;i<n;i++){
             if(s[i]=='*'){
-                if(!pq.empty())pq.pop();
+                trace[i]=false;
+                if(!pq.empty()){
+                    trace[pq.top().second]=false;
+                    pq.pop();
+                }
             }
             else{
                 pq.push({s[i],i});
             }
-        }
-
-        while(!pq.empty()){
-            trace[pq.top().second]=true;
-            pq.pop();
         }
 
         string ans="";
