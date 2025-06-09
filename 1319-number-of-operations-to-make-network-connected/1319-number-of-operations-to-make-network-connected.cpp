@@ -7,29 +7,30 @@ public:
             adj[connections[i][0]].push_back(connections[i][1]);
             adj[connections[i][1]].push_back(connections[i][0]);
         }
-        queue<int>pq;
-        vector<bool>visited(n,false);
+        
+        vector<bool> visited(n, false);
+        int ans = 0;
 
-        pq.push(0);
-        int cnt1=0;
-        while(!pq.empty()){
-            int node=pq.front();
-            pq.pop();
+        for (int i = 0; i < n; ++i) {
+            if (!visited[i]) {
+                ans++;
+                queue<int> q;
+                q.push(i);
+                visited[i] = true;
 
-            if(visited[node])continue;
-            visited[node]=true;
-            for(int x:adj[node]){
-                if(!visited[x]){
-                    pq.push(x);
-                    cnt1++;
+                while (!q.empty()) {
+                    int node = q.front();
+                    q.pop();
+                    for (int neighbor : adj[node]) {
+                        if (!visited[neighbor]) {
+                            visited[neighbor] = true;
+                            q.push(neighbor);
+                        }
+                    }
                 }
             }
-        }  
-        int cnt2=0;
-        for(int i=0;i<n;i++){
-            if(!visited[i])cnt2++;
-        }      
-        int cnt3=connections.size()-cnt1;
-        return cnt2<cnt3 ? -1 : cnt2;
+        }
+
+        return ans - 1;
     }
 };
