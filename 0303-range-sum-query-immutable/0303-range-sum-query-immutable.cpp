@@ -1,8 +1,8 @@
 class NumArray {
-    vector<int>sum,nums1;
+    vector<int>sum;
 public:
     NumArray(vector<int>& nums) {
-        nums1=sum=nums;
+        sum=nums;
         for(int i=1;i<sum.size();i++){
             sum[i]+=sum[i-1];
         }
