@@ -1,28 +1,33 @@
 class Solution {
-    vector<int>ans;
-    unordered_map<string,vector<int>>m;
-    vector<int>solve(vector<int>&nums,int i,int prev){
-        if(i==nums.size())return {};
-
-        string key=to_string(i)+","+to_string(prev);
-        if(m.find(key)!=m.end())return m[key];
-
-        vector<int>ans=solve(nums,i+1,prev);
-
-        if(prev==1 || nums[i]%prev==0){
-            vector<int>a={nums[i]};
-            vector<int>b=solve(nums,i+1,nums[i]);
-            a.insert(a.end(),b.begin(),b.end());
-
-            if(a.size()>ans.size())ans=a;
-        }
-        m[key]=ans;
-        return ans;
-    }
-
 public:
     vector<int> largestDivisibleSubset(vector<int>& nums) {
+        int n=nums.size();
         sort(nums.begin(),nums.end());
-        return solve(nums,0,1);
+        vector<int>dp(n,1),trace(n,-1);;
+        int maxi=-1;
+        for(int i=0;i<n;i++){
+            trace[i]=i;
+            for(int j=i-1;j>=0;j--){
+                if(nums[i]%nums[j]==0){
+                    if(dp[i]<dp[j]+1){
+                        dp[i]=dp[j]+1;
+                        trace[i]=j;
+                    }
+                }
+                if(maxi!=-1 && dp[maxi]<dp[i]){
+                    maxi=i;
+                }
+                if(maxi==-1){
+                    maxi=i;
+                }
+            }
+        }
+        vector<int>ans;
+        while(maxi!=trace[maxi]){
+            ans.push_back(nums[maxi]);
+            maxi=trace[maxi];
+        }
+        ans.push_back(nums[maxi]);
+        return ans;
     }
 };
