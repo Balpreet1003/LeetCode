@@ -2,6 +2,9 @@ class Solution {
 public:
     vector<int> largestDivisibleSubset(vector<int>& nums) {
         int n=nums.size();
+        if(n==1){
+            return nums;
+        }
         sort(nums.begin(),nums.end());
         vector<int>dp(n,1),trace(n,-1);;
         int maxi=-1;
