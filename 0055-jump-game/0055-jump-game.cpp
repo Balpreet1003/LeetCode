@@ -1,18 +1,19 @@
 class Solution {
-    unordered_map<int,int>dp;
-    int solve(vector<int>&nums,int i){
-        if(i==nums.size()-1 || nums[i]+i>=nums.size()-1)return true;
-        if(nums[i]==0)return false;
-        if(dp.find(i)!=dp.end())return dp[i];
-
-        bool ans=false;
-        for(int j=1;j<=nums[i];j++){
-            ans|=solve(nums,i+j);
-        }
-        return dp[i] = ans;
-    }
 public:
     bool canJump(vector<int>& nums) {
-        return solve(nums,0);
+        int n=nums.size();
+        vector<bool>vis(n,false);
+        vis[0]=true;
+        for(int i=0;i<n-1;i++){
+            if(vis[i]){
+                if(i+nums[i]>=n-1){
+                    return true;
+                }
+                for(int j=i+1;j<=min(n-1,i+nums[i]);j++){
+                    vis[j]=true;
+                }
+            }
+        }
+        return vis[n-1];
     }
 };
