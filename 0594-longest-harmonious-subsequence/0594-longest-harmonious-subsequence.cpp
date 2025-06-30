@@ -7,7 +7,7 @@ public:
             m[i]++;
         }
         for(auto &[x,y]:m){
-            if(x!=(1e9) && m.find(x+1)!=m.end()){
+            if(m.count(x + 1)){
                 ans=max(ans,y+m[x+1]);
             }
         }
