@@ -1,22 +1,22 @@
 class Solution {
 public:
     int trap(vector<int>& height) {
-        int n=height.size();
-        vector<int>prev(n,0),next(n,0);
-        prev[0]=height[0];
-        for(int i=1;i<n;i++){
-            prev[i]=max(height[i],prev[i-1]);
-        }
-        next[n-1]=height[n-1];
-        for(int i=n-2;i>=0;i--){
-            next[i]=max(height[i],next[i+1]);
-        }
-        int ans=0;
-        for(int i=1;i<n-1;i++){
-            if(height[i]<prev[i] && height[i]<next[i]){
-                ans+=(min(prev[i],next[i])-height[i]);
+        int n = height.size();
+        int ans = 0;
+        stack<int> st;
+
+        for (int i = 0; i < n; i++) {
+            while (!st.empty() && height[i] > height[st.top()]) {
+                int top = st.top();
+                st.pop();
+                if (st.empty()) break;
+                int distance = i - st.top() - 1;
+                int bounded_height = min(height[i], height[st.top()]) - height[top];
+                ans += distance * bounded_height;
             }
+            st.push(i);
         }
+
         return ans;
     }
 };
