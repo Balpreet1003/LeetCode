@@ -1,26 +1,24 @@
 class Solution {
-    void rle(string& s){
-        string ans="";
-        int cnt=1;
-        char ch =s[0];
-        for(int i=1;i<s.length();i++){
-            if(ch==s[i])cnt++;
-            else{
-                ans+=(to_string(cnt)+ch);
-                cnt=1;
-                ch=s[i];
-            }
-        }
-        ans+=(to_string(cnt)+ch);
-        s=ans;
-    }
 public:
     string countAndSay(int n) {
-        if(n==1)return "1";
-        string s="1";
-        for(int i=1;i<n;i++){
-            rle(s);
+        string ans="1";
+        for(int i=2;i<=n;i++){
+            int cnt=1;
+            string s="";
+            for(int j=1;j<ans.length();j++){
+                if(ans[j-1]==ans[j]){
+                    cnt++;
+                }
+                else{
+                    s+=to_string(cnt);
+                    s+=ans[j-1];
+                    cnt=1;
+                }
+            }
+            s+=to_string(cnt);
+            s+=ans[ans.length()-1];
+            ans=s;
         }
-        return s;
+        return ans;
     }
 };
