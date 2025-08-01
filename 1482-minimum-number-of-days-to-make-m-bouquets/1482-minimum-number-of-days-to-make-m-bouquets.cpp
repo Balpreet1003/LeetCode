@@ -1,42 +1,30 @@
 class Solution {
-private:
-    bool isPossible(vector<int>&nums,int& m,int& k,int& mid){
-        ios::sync_with_stdio(0);
-        cin.tie(0);
-        int count = 0;
-        int bouquets = 0;
-        
-        for (int i = 0; i < nums.size(); ++i) {
-            if (nums[i] <= mid) {
-                count++;
-                if (count == k) {
-                    bouquets++;
-                    count = 0;
-                }
-            } else {
-                count = 0;
-            }
-            
-            if (bouquets >= m) {
-                return true;
-            }
-        }
-        
-        return false;
-    }
-public:
-    int minDays(vector<int>& nums, int m, int k) {
-        int ans=-1;
-        int s=0,e=*max_element(nums.begin(),nums.end());
-
-        while(s<=e){
-            int mid=s+(e-s)/2;
-            if(isPossible(nums,m,k,mid)){
-                e=mid-1;
-                ans=mid;
+    bool is_possible(vector<int>&nums, int days, int m, int k){
+        int cnt=0, x=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]<=days){
+                x++;
             }
             else{
-                s=mid+1;
+                cnt+=(x/k);
+                x=0;
+            }
+        }
+        cnt+=(x/k);
+        return cnt>=m;
+    }
+public:
+    int minDays(vector<int>& bloomDay, int m, int k) {
+        int i=1, j=*max_element(bloomDay.begin(), bloomDay.end()), ans=-1;
+        while(i<=j){
+            int mid=j-((j-i)/2);
+            cout<<mid<<endl;
+            if(is_possible(bloomDay,mid,m,k)){
+                ans=mid;
+                j=mid-1;
+            }
+            else{
+                i=mid+1;
             }
         }
         return ans;
