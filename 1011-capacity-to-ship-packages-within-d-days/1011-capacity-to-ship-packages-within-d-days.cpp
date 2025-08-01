@@ -1,31 +1,33 @@
 class Solution {
-    bool isposs(vector<int>& a, int& t, int& mid) {
-        int c = 1, sum = 0;
-        for (int i = 0; i < a.size(); i++) {
-            if (a[i] > mid)
+    bool is_possible(vector<int>&nums, int days, int sum){
+        int sum1=0, cnt=1;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>sum){
                 return false;
-            if (sum + a[i] > mid) {
-                c++;
-                sum = a[i];
-            } else
-                sum += a[i];
+            }
+            else if(sum1+nums[i]>sum){
+                cnt++;
+                sum1=nums[i];
+            }
+            else{
+                sum1+=nums[i];
+            }
         }
-        return c <= t;
+        return cnt<=days;
     }
-
 public:
-    int shipWithinDays(vector<int>& a, int t) {
-        int i = 1, j = 0;
-        for (int x : a)
-            j += x;
-        int ans = 0;
-        while (i <= j) {
-            int mid = (i + j) / 2;
-            if (isposs(a, t, mid)) {
-                ans = mid;
-                j = mid - 1;
-            } else {
-                i = mid + 1;
+    int shipWithinDays(vector<int>& weights, int days) {
+        int i=0, j=accumulate(weights.begin(), weights.end(),0);
+        int ans=0;
+
+        while(i<=j){
+            int mid=(i+j)/2;
+            if(is_possible(weights, days, mid)){
+                ans=mid;
+                j=mid-1;
+            }
+            else{
+                i=mid+1;
             }
         }
         return ans;
