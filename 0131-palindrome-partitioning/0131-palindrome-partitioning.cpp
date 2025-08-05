@@ -10,7 +10,8 @@ class Solution {
         return true;
     }
     vector<vector<string>>ans;
-    void solve(string&s,int i, vector<string>&temp){
+    vector<string>temp;
+    void solve(string&s,int i){
         if(i>=s.length()){
             ans.push_back(temp);
             return;
@@ -20,15 +21,14 @@ class Solution {
             s1+=s[j];
             if(isPalindrome(s1)){
                 temp.push_back(s1);
-                solve(s,j+1,temp);
+                solve(s,j+1);
                 temp.pop_back();
             }
         }
     }
 public:
     vector<vector<string>> partition(string s) {
-        vector<string>temp;
-        solve(s,0,temp);
+        solve(s,0);
         return ans;
     }
 };
