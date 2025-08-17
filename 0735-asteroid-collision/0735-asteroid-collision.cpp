@@ -1,27 +1,26 @@
 class Solution {
 public:
     vector<int> asteroidCollision(vector<int>& asteroids) {
+        vector<int> ans;
         stack<int> st;
-        for (int ast : asteroids) {
-            bool destroyed = false;
-            while (!st.empty() && ast < 0 && st.top() > 0) {
-                if (st.top() < -ast) {
+        for (auto i : asteroids) {
+            if (i < 0) {
+                while (!st.empty() && st.top() > 0 && abs(st.top()) < abs(i))
                     st.pop();
-                    continue;
-                } else if (st.top() == -ast) {
+                if (!st.empty() && st.top() > 0 && abs(st.top()) == abs(i)) {
                     st.pop();
+                } else if(st.empty() || st.top()<0) {
+                    st.push(i);
                 }
-                destroyed = true;
-                break;
+            } else {
+                st.push(i);
             }
-            if (!destroyed)
-                st.push(ast);
         }
-        vector<int> res(st.size());
-        for (int i = st.size() - 1; i >= 0; --i) {
-            res[i] = st.top();
+        while (!st.empty()) {
+            ans.push_back(st.top());
             st.pop();
         }
-        return res;
+        reverse(ans.begin(), ans.end());
+        return ans;
     }
 };
