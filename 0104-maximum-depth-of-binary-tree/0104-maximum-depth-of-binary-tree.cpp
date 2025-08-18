@@ -10,15 +10,14 @@
  * };
  */
 class Solution {
+    int get_height(TreeNode* root){
+        if(!root){
+            return 0;
+        }
+        return max(get_height(root->left), get_height(root->right))+1;
+    }
 public:
     int maxDepth(TreeNode* root) {
-        //base case
-        if(root==NULL) return 0;
-        
-        //1 case 
-        int Lheight=maxDepth(root->left);
-        int Rheight=maxDepth(root->right);
-        int ans= max(Lheight,Rheight)+1;
-        return ans;
+        return get_height(root);
     }
 };
