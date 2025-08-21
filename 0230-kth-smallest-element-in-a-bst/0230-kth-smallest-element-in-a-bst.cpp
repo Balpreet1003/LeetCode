@@ -10,21 +10,16 @@
  * };
  */
 class Solution {
-public:
-    int kthSmallest(TreeNode* root, int& k) {
-        //base case
-        if(root==NULL)
-            return -1;
-        
-        //left
-        int Lans=kthSmallest(root->left,k);
-        if(Lans!=-1)
-            return Lans;
-        //node
+    int solve(TreeNode*root,int& k){
+        if(!root)return -1;
+        int ans=solve(root->left,k);
+        if(ans!=-1)return ans;
         k--;
-        if(k==0)
-            return root->val;
-        //right
-        return kthSmallest(root->right,k);
+        if(k==0)return root->val;
+        return solve(root->right,k);
+    }
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        return solve(root,k);
     }
 };
