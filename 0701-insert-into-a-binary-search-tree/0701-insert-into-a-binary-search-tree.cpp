@@ -10,16 +10,18 @@
  * };
  */
 class Solution {
-    TreeNode*solve(TreeNode*root,int&t){
+    TreeNode* solve(TreeNode* root, int val){
         if(!root){
-            return new TreeNode(t);
+            return new TreeNode(val);
         }
-        if(root->val>t)root->left=solve(root->left,t);
-        else root->right=solve(root->right,t);
+        if(root->val<val)
+            root->right=solve(root->right, val);
+        else
+            root->left=solve(root->left, val);
         return root;
     }
 public:
-    TreeNode* insertIntoBST(TreeNode* root, int t) {
-        return solve(root,t);
+    TreeNode* insertIntoBST(TreeNode* root, int val) {
+        return solve(root, val);
     }
 };
