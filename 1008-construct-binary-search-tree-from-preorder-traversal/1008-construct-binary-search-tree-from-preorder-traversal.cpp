@@ -10,16 +10,23 @@
  * };
  */
 class Solution {
-    TreeNode*constructBst(vector<int>&nums,int l,int u,int& i){
-        if(i==nums.size() || nums[i]<l || nums[i]>u)return NULL;
-        TreeNode*node=new TreeNode(nums[i++]);
-        node->left=constructBst(nums,l,nums[i-1],i);
-        node->right=constructBst(nums,nums[i-1],u,i);
+    TreeNode* construct(vector<int>&nums, int l, int r){
+        if(l>r)
+            return NULL;
+        if(l==r)
+            return new TreeNode(nums[l]);
+        TreeNode* node=new TreeNode(nums[l]);
+        int i=l+1;
+        for(;i<nums.size();i++){
+            if(nums[l]<nums[i])
+                break;
+        }
+        node->left=construct(nums, l+1, i-1);
+        node->right=construct(nums, i, r);
         return node;
     }
 public:
     TreeNode* bstFromPreorder(vector<int>& preorder) {
-        int i=0;
-        return constructBst(preorder,0,1001,i);
+        return construct(preorder, 0, preorder.size()-1);
     }
 };
