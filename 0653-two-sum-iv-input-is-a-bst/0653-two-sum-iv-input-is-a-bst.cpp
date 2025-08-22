@@ -10,37 +10,34 @@
  * };
  */
 class Solution {
-public:
-
-    void InorderArray(TreeNode*root,vector<int>&inorder){
-        //base case
-        if(root==NULL)
-            return;
-        //1 case
-        //left
-        InorderArray(root->left,inorder);
-        //node
-        inorder.push_back(root->val);
-        //right
-        InorderArray(root->right,inorder);
-    }
-
-    bool findTarget(TreeNode* root, int& k) {
-        //create inorder array
-        vector<int>inorder;
-        InorderArray(root,inorder);
-
-        int s=0;
-        int e=inorder.size()-1;
-        while(s<e){
-            int a=inorder[s], b=inorder[e];
-            int sum=a+b;
-            if(sum==k)
+    bool is_poss(TreeNode* root, int tar, TreeNode* node){
+        TreeNode* curr = root;
+        while(curr){
+            if(curr->val==tar){
+                if(curr==node)
+                    return false;
                 return true;
-            else if(sum>k)
-                e--;
+            }
+            if(curr->val>tar)
+                curr=curr->left;
             else
-                s++;
+                curr=curr->right;
+        }
+        return false;
+    }
+public:
+    bool findTarget(TreeNode* root, int k) {
+        queue<TreeNode*>q;
+        q.push(root);
+        while(!q.empty()){
+            auto node=q.front();
+            q.pop();
+            if(is_poss(root, k-node->val, node))
+                return true;
+            if(node->left)
+                q.push(node->left);
+            if(node->right)
+                q.push(node->right);
         }
         return false;
     }
