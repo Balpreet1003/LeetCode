@@ -15,12 +15,7 @@ public:
                     i++;
                 }
             }
-            if(k==0){
-                ans=max(ans, j-i-1);
-            }
-            else{
-                ans=max(ans, j-i-1);
-            }
+            ans=max(ans, j-i-1);
         }
         return ans;
     }
