@@ -1,55 +1,52 @@
 class Solution {
-    vector<vector<bool>> trace_i;
-    vector<vector<bool>> trace_j;
-    vector<vector<bool>> trace_block;
+    int size;
+    vector<vector<int>> row_trace;
+    vector<vector<int>> col_trace;
+    vector<vector<int>> box_trace;
 
-    bool solve(vector<vector<char>>& a, int i){
-        if (i >= 81) return true;
+    bool solve(vector<vector<char>>& board, int idx) {
+        if (idx > 80)
+            return true;
+        int i = idx / 9, j = idx % 9; 
 
-        int row = i / 9;
-        int col = i % 9;
-        int block_index = (row / 3) * 3 + (col / 3);
+        if (board[i][j] == '.') {
+            for (int x = 1; x <= 9; x++) {  
+                if (!row_trace[i][x] && !col_trace[j][x] && !box_trace[(i/3)*3 + (j/3)][x]) {
+                    board[i][j] = (char)('0' + x);
+                    row_trace[i][x] = col_trace[j][x] = box_trace[(i/3)*3 + (j/3)][x] = true;
 
-        if (a[row][col] == '.') {
-            for (int k = 1; k <= 9; k++) {
-                if (!trace_i[row][k-1] && !trace_j[col][k-1] && !trace_block[block_index][k-1]) {
-                    a[row][col] = char(k + '0');
-                    trace_i[row][k-1] = true;
-                    trace_j[col][k-1] = true;
-                    trace_block[block_index][k-1] = true;
+                    if (solve(board, idx + 1))
+                        return true;
 
-                    if (solve(a, i+1)) return true;
-
-                    a[row][col] = '.';
-                    trace_i[row][k-1] = false;
-                    trace_j[col][k-1] = false;
-                    trace_block[block_index][k-1] = false;
+                    // backtrack
+                    board[i][j] = '.';
+                    row_trace[i][x] = col_trace[j][x] = box_trace[(i/3)*3 + (j/3)][x] = false;
                 }
             }
+            return false;
         } else {
-            return solve(a, i+1);
+            return solve(board, idx + 1);
         }
-
-        return false;
     }
 
 public:
-    void solveSudoku(vector<vector<char>>& a) {
-        trace_i.resize(9, vector<bool>(9, false));
-        trace_j.resize(9, vector<bool>(9, false));
-        trace_block.resize(9, vector<bool>(9, false));
+    Solution() : size(9),
+        row_trace(9, vector<int>(10, false)),
+        col_trace(9, vector<int>(10, false)),
+        box_trace(9, vector<int>(10, false)) {}
 
+    void solveSudoku(vector<vector<char>>& board) {
+        // Fill initial constraints
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (a[i][j] != '.') {
-                    int num = a[i][j] - '1';
-                    trace_i[i][num] = true;
-                    trace_j[j][num] = true;
-                    int block_index = (i / 3) * 3 + (j / 3);
-                    trace_block[block_index][num] = true;
+                if (board[i][j] != '.') {
+                    int d = board[i][j] - '0';
+                    row_trace[i][d] = true;
+                    col_trace[j][d] = true;
+                    box_trace[(i/3)*3 + (j/3)][d] = true;
                 }
             }
         }
-        solve(a, 0);
+        solve(board, 0);
     }
 };
