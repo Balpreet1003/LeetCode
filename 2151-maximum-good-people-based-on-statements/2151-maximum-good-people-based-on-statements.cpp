@@ -1,9 +1,10 @@
 class Solution {
 public:
     int maximumGood(vector<vector<int>>& statements) {
+
         int n=statements.size(), ans=0;
 
-        for(int i=0;i<(1<<n);i++){
+        for(int i=1;i<(1<<n);i++){
             vector<int>arr(n,-1);
             int cnt=0;
             for(int j=0;j<16;j++){
