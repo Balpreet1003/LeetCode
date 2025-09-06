@@ -1,38 +1,29 @@
 class Solution {
 public:
-    int n;
-    vector<int> degreein;
-    vector< vector<int> > rGraph;
-    vector<int> ans;
-    
-    void init(vector<vector<int>>& G){
-        n = G.size();
-        degreein = vector<int>(n,0);
-        rGraph.resize(n, vector<int>(0) );
-        
-        for (int u=0; u<n; u++){
-            for (int v:G[u]){
-                rGraph[v].push_back(u);
-                degreein[u]++;
-            }
-        }
-    }
-    
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
-        init(graph);
-        queue<int> que;
-        for (int i=0; i<n; i++){
-            if (degreein[i]==0) que.push(i);
+        int n=graph.size();
+        unordered_map<int, vector<int>>adj;
+        vector<int>indegree(n,0);
+        for(int i=0;i<n;i++){
+            indegree[i]=graph[i].size();
+            for(int j:graph[i])
+                adj[j].push_back(i);
         }
-        while (que.size()){
-            int u = que.front(); que.pop();
-            ans.push_back(u);
-            for (int v:rGraph[u]){
-                degreein[v]--;
-                if (degreein[v]==0) que.push(v);
+        queue<int>q;
+        for(int i=0;i<n;i++)
+            if(indegree[i]==0)
+                q.push(i);
+
+        vector<int>ans;
+        while(!q.empty()){
+            int node=q.front(); q.pop();
+            ans.push_back(node);
+            for(int x:adj[node]){
+                if(--indegree[x]==0)
+                    q.push(x);
             }
         }
-        sort(ans.begin(),ans.end());
+        sort(ans.begin(), ans.end());
         return ans;
     }
 };
