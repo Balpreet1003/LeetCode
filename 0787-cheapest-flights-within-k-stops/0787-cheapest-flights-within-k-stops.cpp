@@ -1,32 +1,31 @@
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
-        vector<vector<pair<int,int>>>adj_list(n);
+        unordered_map<int, vector<pair<int,int>>>adj_list;
         for(auto x:flights){
             adj_list[x[0]].push_back({x[1],x[2]});
         }
 
-        queue<pair<int,pair<int,int>>>pq;
-        vector<int>dis(n,INT_MAX);
+        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>>q;
+        vector<vector<int>>ans(n, vector<int>(k+2,INT_MAX));
+        q.push({0, 0, src});
+        ans[src][0]=0;
+        while(!q.empty()){
+            int node=q.top()[2], h=q.top()[1], wt=q.top()[0];
+            q.pop();
 
-        pq.push({0,{src,0}});
-        dis[src]=0;
-
-        while(!pq.empty()){
-            int cost=pq.front().first;
-            int node=pq.front().second.first;
-            int h=pq.front().second.second;
-            pq.pop();
-
-            if(h>k)continue;
-
-            for(auto &[x,cst]:adj_list[node]){
-                if(cst+cost<dis[x] && h<=k){
-                    dis[x]=cst+cost;
-                    pq.push({cst+cost,{x,h+1}});
+            if(node==dst)
+                return wt;
+            if(h>k)
+                continue;
+            
+            for(auto &[x,w]:adj_list[node]){
+                if(ans[x][h+1]>wt+w){
+                    ans[x][h+1]=wt+w;
+                    q.push({wt+w, h+1, x});
                 }
             }
         }
-        return dis[dst]==INT_MAX ? -1 : dis[dst];
+        return -1;
     }
 };
