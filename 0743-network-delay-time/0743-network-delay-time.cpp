@@ -14,7 +14,7 @@ public:
             auto [w,node]=pq.top();
             pq.pop();
 
-            if(w > ans[node]) continue;
+            // if(w > ans[node]) continue;
 
             for(auto &[x,w1]:adj[node]){
                 if(w+w1<ans[x]){
