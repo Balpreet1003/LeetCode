@@ -1,31 +1,22 @@
 class Solution {
 public:
-    int minAnagramLength(string input_str) {
-        int n = input_str.size();
-        vector<int> freq(26, 0);
+    bool check(int k, string &s){
+        map<char,int>mp1;
+        for(int i=0;i<k;i++) mp1[s[i]]++;
 
-        // Count frequency of each character
-        for (char c : input_str) {
-            freq[c - 'a']++;
+        for(int i=k;i<s.size();i+=k){
+            map<char,int>mp;
+            for(int j=i;j<i+k;j++)mp[s[j]]++;
+            if(mp!=mp1) return 0;
         }
+        return 1;
 
-        // Try each divisor of n
-        for (int k = 1; k <= n; k++) {
-            if (n % k != 0) continue;  // k must divide n
-            bool ok = true;
-
-            // For each character frequency, it must be divisible by (n/k)
-            int parts = n / k;
-            for (int f : freq) {
-                if (f % parts != 0) {
-                    ok = false;
-                    break;
-                }
-            }
-
-            if (ok) return k;  // smallest valid k
+    }
+    int minAnagramLength(string s) {
+        int n = s.size();
+        for(int i=1;i<=s.size();i++){
+            if(n%i==0 && check(i,s)) return i;
         }
-
-        return n; 
+        return n;
     }
 };
