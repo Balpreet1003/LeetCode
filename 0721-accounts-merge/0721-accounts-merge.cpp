@@ -1,92 +1,55 @@
-class DisjointSet {
-    vector<int> rank, parent, size;
-public:
-    DisjointSet(int n) {
-        rank.resize(n + 1, 0);
-        parent.resize(n + 1);
-        size.resize(n + 1);
-        for (int i = 0; i <= n; i++) {
-            parent[i] = i;
-            size[i] = 1;
-        }
-    }
-
-    int findUPar(int node) {
-        if (node == parent[node])
-            return node;
-        return parent[node] = findUPar(parent[node]);
-    }
-
-    void unionByRank(int u, int v) {
-        int ulp_u = findUPar(u);
-        int ulp_v = findUPar(v);
-        if (ulp_u == ulp_v) return;
-        if (rank[ulp_u] < rank[ulp_v]) {
-            parent[ulp_u] = ulp_v;
-        }
-        else if (rank[ulp_v] < rank[ulp_u]) {
-            parent[ulp_v] = ulp_u;
-        }
-        else {
-            parent[ulp_v] = ulp_u;
-            rank[ulp_u]++;
-        }
-    }
-
-    void unionBySize(int u, int v) {
-        int ulp_u = findUPar(u);
-        int ulp_v = findUPar(v);
-        if (ulp_u == ulp_v) return;
-        if (size[ulp_u] < size[ulp_v]) {
-            parent[ulp_u] = ulp_v;
-            size[ulp_v] += size[ulp_u];
-        }
-        else {
-            parent[ulp_v] = ulp_u;
-            size[ulp_u] += size[ulp_v];
-        }
-    }
-};
-
 class Solution {
+    int findParent(vector<int>& parent, int node){
+        if(parent[node]==node)
+            return node;
+        return parent[node]=findParent(parent, parent[node]);
+    }
+    void unionSet(int u, int v, vector<int>& parent, vector<int>& rank){
+        u=findParent(parent, u);
+        v=findParent(parent, v);
+
+        if(rank[u]<rank[v]){
+            parent[u]=v;
+        }
+        else if(rank[v]<rank[u]){
+            parent[v]=u;
+        }
+        else{
+            parent[v]=u;
+            rank[u]++;
+        }
+    }
 public:
-    vector<vector<string>> accountsMerge(vector<vector<string>>& details) {
-        int n = details.size();
-        DisjointSet ds(n);
-        sort(details.begin(), details.end());
-        unordered_map<string, int> mapMailNode;
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < details[i].size(); j++) {
-                string mail = details[i][j];
-                if (mapMailNode.find(mail) == mapMailNode.end()) {
-                    mapMailNode[mail] = i;
+    vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
+        int n=accounts.size();
+        vector<int>parent(n, 0), rank(n, 0);
+        for(int i=0;i<n;i++)
+            parent[i]=i;
+        
+        unordered_map<string, int>trace;
+        for(int i=0;i<n;i++){
+            for(int j=1;j<accounts[i].size();j++){
+                if(trace.count(accounts[i][j])){
+                    unionSet(trace[accounts[i][j]], i, parent, rank);
                 }
-                else {
-                    ds.unionBySize(i, mapMailNode[mail]);
+                else{
+                    trace[accounts[i][j]]=i;
                 }
             }
         }
-
-        vector<string> mergedMail[n];
-        for (auto it : mapMailNode) {
-            string mail = it.first;
-            int node = ds.findUPar(it.second);
-            mergedMail[node].push_back(mail);
+        unordered_map<int,vector<string>>m;
+        for(auto &[x, y]:trace){
+            int par=findParent(parent, y);
+            m[par].push_back(x);
         }
-
-        vector<vector<string>> ans;
-
-        for (int i = 0; i < n; i++) {
-            if (mergedMail[i].size() == 0) continue;
-            sort(mergedMail[i].begin(), mergedMail[i].end());
-            vector<string> temp;
-            temp.push_back(details[i][0]);
-            for (auto it : mergedMail[i]) {
-                temp.push_back(it);
-            }
+        vector<vector<string>>ans;
+        for(auto [x,y]:m){
+            vector<string>temp;
+            temp.push_back(accounts[x][0]);
+            sort(y.begin(), y.end());
+            temp.insert(temp.end(), y.begin(), y.end());
             ans.push_back(temp);
         }
-        sort(ans.begin(), ans.end());
         return ans;
     }
 };
