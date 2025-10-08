@@ -28,13 +28,11 @@ public:
         if (i >= s.length())
             return node->is_leaf_node;
         if (s[i] == '.') {
-            bool ans = false;
             for (int j = 0; j < 26; j++) {
-                if (node->children[j]) {
-                    ans |= search_helper(s, i + 1, node->children[j]);
-                }
+                if (node->children[j] && search_helper(s, i + 1, node->children[j])) 
+                    return true;
             }
-            return ans;
+            return false;
         }
         if (!node->children[s[i] - 'a'])
             return false;
