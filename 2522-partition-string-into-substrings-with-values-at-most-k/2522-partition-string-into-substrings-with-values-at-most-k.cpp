@@ -12,13 +12,13 @@ public:
         // return solve(s, k, 0);
 
         int ans=1;
-        string s1="";
+        long long s1=0;
         for(char ch:s){
             if(ch-'0'>k)
                 return -1;
-            s1+=ch;
-            if(stoll(s1)>1LL*k){
-                s1="";s1+=ch;
+            s1=s1*10+(ch-'0');
+            if(s1>1LL*k){
+                s1=ch-'0';
                 ans++;
             }
         }
