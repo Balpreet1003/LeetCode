@@ -11,35 +11,26 @@
 class Solution {
 public:
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-        unordered_map<int, bool> mp;
-        for (int i : nums) {
-            mp[i] = true;
-        }
-
-        ListNode* n = head;
-        ListNode* prev = NULL;
-
-        while (n != NULL) {
-            if (mp[n->val]) {
-                if (n == head) {
-                    ListNode* temp = n->next;
-                    n->next = NULL;
-                    head = temp;
-                    n = head;
-                } else {
-                    prev->next = n->next;
-                    n->next = NULL;
-                    n = prev->next;
+        sort(nums.begin(), nums.end());
+        ListNode* node=head, *prev=NULL;
+        while(node){
+            if(binary_search(nums.begin(), nums.end(), node->val)){
+                if(node==head){
+                    head=node->next;
+                    node->next=NULL;
+                    node=head;
                 }
-            } else {
-                prev = n;
-                n = n->next;
+                else{
+                    prev->next=node->next;
+                    node->next=NULL;
+                    node=prev->next;
+                }
+            }
+            else{
+                prev=node;
+                node=node->next;
             }
         }
-
         return head;
     }
 };
