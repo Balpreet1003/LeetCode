@@ -8,7 +8,7 @@ public:
                 cnt++;
             }
             else{
-                ans=(ans+(((1LL*cnt*(cnt+1)%MOD))/2))%MOD;
+                ans=(ans+((1LL*cnt*(cnt+1))/2))%MOD;
                 cnt=0;
             }
         }
