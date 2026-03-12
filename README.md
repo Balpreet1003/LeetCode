@@ -35,4 +35,16 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1980-find-unique-binary-string](https://github.com/Balpreet1003/LeetCode/tree/main/1980-find-unique-binary-string/) | Medium |
+## Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
 <!---LeetCode Topics End-->
