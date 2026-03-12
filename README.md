@@ -41,12 +41,22 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+| [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 ## Depth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+| [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 ## Breadth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+## Binary Search Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
+## Binary Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 <!---LeetCode Topics End-->
