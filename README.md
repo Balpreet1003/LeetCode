@@ -8,6 +8,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/Balpreet1003/LeetCode/tree/main/1980-find-unique-binary-string/) | Medium |
+| [2760-longest-even-odd-subarray-with-threshold](https://github.com/Balpreet1003/LeetCode/tree/main/2760-longest-even-odd-subarray-with-threshold/) | Easy |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -27,6 +28,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1888-minimum-number-of-flips-to-make-the-binary-string-alternating](https://github.com/Balpreet1003/LeetCode/tree/main/1888-minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium |
+| [2760-longest-even-odd-subarray-with-threshold](https://github.com/Balpreet1003/LeetCode/tree/main/2760-longest-even-odd-subarray-with-threshold/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
