@@ -1,25 +1,19 @@
 class Solution {
+    vector<vector<int>>dp;
+    int solve(string& s1, string& s2, int i, int j){
+        if(i>=s1.length() || j>=s2.length())
+            return 0;
+        if(dp[i][j]!=-1)
+            return dp[i][j];
+        int ans=0;
+        if(s1[i]==s2[j])
+            ans=max(ans, solve(s1, s2, i+1, j+1)+1);
+        ans=max({ans, solve(s1, s2, i+1, j), solve(s1, s2, i, j+1)});
+        return dp[i][j]=ans;
+    }
 public:
-    int longestCommonSubsequence(string s1, string s2) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-        int n=s1.length(),m=s2.length();
-        vector<int>prev(m+1,0),curr(m+1,0);
-        for(int i=n-1;i>=0;i--){
-            for(int j=m-1;j>=0;j--){
-                int a1=0,a2=0,a3=0;
-                if(s1[i]==s2[j]){
-                    a1=prev[j+1]+1;
-                }
-                else{
-                    a2=curr[j+1];
-                    a3=prev[j];
-                }
-                curr[j]=max(a1,max(a2,a3));
-            }
-            prev=curr;
-        }
-        return curr[0];
+    int longestCommonSubsequence(string text1, string text2) {
+        dp.resize(text1.length()+1, vector<int>(text2.length()+1, -1));
+        return solve(text1, text2, 0, 0);
     }
 };
