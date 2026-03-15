@@ -50,16 +50,19 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+| [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
 | [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 ## Depth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+| [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
 | [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 ## Breadth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
+| [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
 ## Binary Search Tree
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -68,6 +71,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Binary Tree
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
 | [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 ## Math
 | Problem Name | Difficulty |
