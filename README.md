@@ -58,16 +58,19 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
 | [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
 | [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
+| [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 ## Breadth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
 | [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
+| [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 ## Binary Search Tree
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 ## Binary Tree
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -93,4 +96,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
+## Graph Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
+## Shortest Path
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 <!---LeetCode Topics End-->
