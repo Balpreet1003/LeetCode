@@ -1,45 +1,34 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
 class Solution {
-    unordered_map<int, pair<int, int>>mp;
-    void solve(TreeNode* root){
-        queue<pair<TreeNode*, pair<int, int>>>q;
-        q.push({root, {0, 0}});
-        while(!q.empty()){
-            auto& [node, x]=q.front();
-            auto& [l, h]=x;
-            q.pop();
-            if(mp.count(h)){
-                mp[h].first=min(mp[h].first, l);
-                mp[h].second=max(mp[h].second, l);
-            }
-            else{
-                mp[h]={l, l};
-            }
+    unordered_map<long long, pair<long long, long long>> mp;
 
-            if(node->left)
-                q.push({node->left, {2*l, h+1}});
-            if(node->right)
-                q.push({node->right, {2*l+1, h+1}});
-        }
-    }
-public:
-    int widthOfBinaryTree(TreeNode* root) {
-        solve(root);
+    int solve(TreeNode* root){
+        queue<pair<TreeNode*, long long>> q;
+        q.push({root, 0});
         int ans=0;
-        for(auto& [x, y]:mp){
-            cout<<y.second<<" - "<<y.first<<endl;
-            ans=max(ans, y.second-y.first+1);
+
+        while(!q.empty()){
+            int len=q.size();
+            int ind=q.front().second;
+            int l=0, r=0;
+            for(int i=0;i<len;i++){
+                auto [node, x] = q.front();
+                q.pop();
+
+                long long curr=x-ind;
+                if(i==0) l=curr;
+                if(i==len-1) r=curr;
+                if(node->left)
+                    q.push({node->left, curr*2});
+                if(node->right)
+                    q.push({node->right, curr*2+1});
+            }
+            ans=max(ans, r-l+1);
         }
         return ans;
+    }
+
+public:
+    int widthOfBinaryTree(TreeNode* root) {
+        return solve(root);
     }
 };
