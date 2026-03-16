@@ -1,26 +1,26 @@
 class Solution {
-    char find_min_char(vector<int>&freq){
+    char get_min(vector<int>& arr){
         for(int i=0;i<26;i++){
-            if(freq[i])return 'a'+i;
+            if(arr[i])
+                return 'a'+i;
         }
         return 'z';
     }
 public:
     string robotWithString(string s) {
-        string ans="";
+        vector<int>arr(26, 0);
+        for(char c:s)
+            arr[c-'a']++;
         stack<char>st;
-        vector<int>freq(26,0);
-        for(char ch:s)freq[ch-'a']++;
-
-        for(char ch:s){
-            char mini=find_min_char(freq);
-
+        string ans="";
+        for(char c:s){
+            char mini=get_min(arr);
             while(!st.empty() && st.top()<=mini){
                 ans+=st.top();
                 st.pop();
             }
-            st.push(ch);
-            freq[ch-'a']--;
+            st.push(c);
+            arr[c-'a']--;
         }
         while(!st.empty()){
             ans+=st.top();
