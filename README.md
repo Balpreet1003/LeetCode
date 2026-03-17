@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
+| [0485-max-consecutive-ones](https://github.com/Balpreet1003/LeetCode/tree/main/0485-max-consecutive-ones/) | Easy |
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1470-shuffle-the-array](https://github.com/Balpreet1003/LeetCode/tree/main/1470-shuffle-the-array/) | Easy |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
