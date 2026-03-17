@@ -46,6 +46,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/Balpreet1003/LeetCode/tree/main/1980-find-unique-binary-string/) | Medium |
+| [2374-node-with-highest-edge-score](https://github.com/Balpreet1003/LeetCode/tree/main/2374-node-with-highest-edge-score/) | Medium |
 | [2434-using-a-robot-to-print-the-lexicographically-smallest-string](https://github.com/Balpreet1003/LeetCode/tree/main/2434-using-a-robot-to-print-the-lexicographically-smallest-string/) | Medium |
 ## Backtracking
 | Problem Name | Difficulty |
@@ -108,6 +109,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Graph Theory
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [2374-node-with-highest-edge-score](https://github.com/Balpreet1003/LeetCode/tree/main/2374-node-with-highest-edge-score/) | Medium |
 | [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 ## Shortest Path
 | Problem Name | Difficulty |
