@@ -12,6 +12,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/Balpreet1003/LeetCode/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2760-longest-even-odd-subarray-with-threshold](https://github.com/Balpreet1003/LeetCode/tree/main/2760-longest-even-odd-subarray-with-threshold/) | Easy |
+| [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 ## Matrix
 | Problem Name | Difficulty |
@@ -35,6 +36,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
 | [1143-longest-common-subsequence](https://github.com/Balpreet1003/LeetCode/tree/main/1143-longest-common-subsequence/) | Medium |
 | [1888-minimum-number-of-flips-to-make-the-binary-string-alternating](https://github.com/Balpreet1003/LeetCode/tree/main/1888-minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium |
+| [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -93,6 +95,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [2434-using-a-robot-to-print-the-lexicographically-smallest-string](https://github.com/Balpreet1003/LeetCode/tree/main/2434-using-a-robot-to-print-the-lexicographically-smallest-string/) | Medium |
+| [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 ## Heap (Priority Queue)
 | Problem Name | Difficulty |
