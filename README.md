@@ -49,6 +49,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
+| [0947-most-stones-removed-with-same-row-or-column](https://github.com/Balpreet1003/LeetCode/tree/main/0947-most-stones-removed-with-same-row-or-column/) | Medium |
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/Balpreet1003/LeetCode/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2374-node-with-highest-edge-score](https://github.com/Balpreet1003/LeetCode/tree/main/2374-node-with-highest-edge-score/) | Medium |
@@ -70,6 +71,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0559-maximum-depth-of-n-ary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0559-maximum-depth-of-n-ary-tree/) | Easy |
 | [0662-maximum-width-of-binary-tree](https://github.com/Balpreet1003/LeetCode/tree/main/0662-maximum-width-of-binary-tree/) | Medium |
 | [0938-range-sum-of-bst](https://github.com/Balpreet1003/LeetCode/tree/main/0938-range-sum-of-bst/) | Easy |
+| [0947-most-stones-removed-with-same-row-or-column](https://github.com/Balpreet1003/LeetCode/tree/main/0947-most-stones-removed-with-same-row-or-column/) | Medium |
 | [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 ## Breadth-First Search
 | Problem Name | Difficulty |
@@ -115,6 +117,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Graph Theory
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0947-most-stones-removed-with-same-row-or-column](https://github.com/Balpreet1003/LeetCode/tree/main/0947-most-stones-removed-with-same-row-or-column/) | Medium |
 | [2374-node-with-highest-edge-score](https://github.com/Balpreet1003/LeetCode/tree/main/2374-node-with-highest-edge-score/) | Medium |
 | [3419-minimize-the-maximum-edge-weight-of-graph](https://github.com/Balpreet1003/LeetCode/tree/main/3419-minimize-the-maximum-edge-weight-of-graph/) | Medium |
 ## Shortest Path
@@ -133,4 +136,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1929-concatenation-of-array](https://github.com/Balpreet1003/LeetCode/tree/main/1929-concatenation-of-array/) | Easy |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0947-most-stones-removed-with-same-row-or-column](https://github.com/Balpreet1003/LeetCode/tree/main/0947-most-stones-removed-with-same-row-or-column/) | Medium |
 <!---LeetCode Topics End-->
