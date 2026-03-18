@@ -1,79 +1,35 @@
-class DisjointSet {
-    vector<int> rank, parent, size;
-public:
-    DisjointSet(int n) {
-        rank.resize(n + 1, 0);
-        parent.resize(n + 1);
-        size.resize(n + 1);
-        for (int i = 0; i <= n; i++) {
-            parent[i] = i;
-            size[i] = 1;
-        }
-    }
-
-    int findUPar(int node) {
-        if (node == parent[node])
-            return node;
-        return parent[node] = findUPar(parent[node]);
-    }
-
-    void unionByRank(int u, int v) {
-        int ulp_u = findUPar(u);
-        int ulp_v = findUPar(v);
-        if (ulp_u == ulp_v) return;
-        if (rank[ulp_u] < rank[ulp_v]) {
-            parent[ulp_u] = ulp_v;
-        }
-        else if (rank[ulp_v] < rank[ulp_u]) {
-            parent[ulp_v] = ulp_u;
-        }
-        else {
-            parent[ulp_v] = ulp_u;
-            rank[ulp_u]++;
-        }
-    }
-
-    void unionBySize(int u, int v) {
-        int ulp_u = findUPar(u);
-        int ulp_v = findUPar(v);
-        if (ulp_u == ulp_v) return;
-        if (size[ulp_u] < size[ulp_v]) {
-            parent[ulp_u] = ulp_v;
-            size[ulp_v] += size[ulp_u];
-        }
-        else {
-            parent[ulp_v] = ulp_u;
-            size[ulp_u] += size[ulp_v];
-        }
-    }
-};
-
 class Solution {
+    unordered_map<string, vector<string>>adj;
+    unordered_map<string, int>vis;
+    void dfs(string u){
+        vis[u]=1;
+        for(auto v:adj[u]){
+            if(!vis.count(v)){
+                dfs(v);
+            }
+        }
+    }
 public:
     int removeStones(vector<vector<int>>& stones) {
         int n=stones.size();
-        int maxRow = 0;
-        int maxCol = 0;
-        for (auto it : stones) {
-            maxRow = max(maxRow, it[0]);
-            maxCol = max(maxCol, it[1]);
-        }
-        DisjointSet ds(maxRow + maxCol + 1);
-        unordered_map<int, int> stoneNodes;
-        for (auto it : stones) {
-            int nodeRow = it[0];
-            int nodeCol = it[1] + maxRow + 1;
-            ds.unionBySize(nodeRow, nodeCol);
-            stoneNodes[nodeRow] = 1;
-            stoneNodes[nodeCol] = 1;
-        }
-
-        int cnt = 0;
-        for (auto it : stoneNodes) {
-            if (ds.findUPar(it.first) == it.first) {
-                cnt++;
+        for(int i=0;i<n;i++){
+            string s1=to_string(stones[i][0])+"/"+to_string(stones[i][1]);
+            adj[s1]={};
+            for(int j=0;j<n;j++){
+                if(i!=j && (stones[i][0]==stones[j][0] || stones[i][1]==stones[j][1])){
+                    string s2=to_string(stones[j][0])+"/"+to_string(stones[j][1]);
+                    adj[s1].push_back(s2);
+                    adj[s2].push_back(s1);
+                }
             }
         }
-        return n - cnt;
+        int ans=0;
+        for(auto [x, y]:adj){
+            if(!vis.count(x)){
+                dfs(x);
+                ans++;
+            }
+        }
+        return n-ans;
     }
 };
