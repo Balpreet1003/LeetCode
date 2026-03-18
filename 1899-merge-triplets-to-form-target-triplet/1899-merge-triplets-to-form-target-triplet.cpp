@@ -11,7 +11,9 @@ public:
                 if(x[2]==t[2])
                     ans[2]=true;
             }
+            if(ans[0] && ans[1] && ans[2])
+                return true;
         }
-        return ans[0] && ans[1] && ans[2];
+        return false;
     }
 };
