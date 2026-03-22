@@ -25,6 +25,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [3070-count-submatrices-with-top-left-element-and-sum-less-than-k](https://github.com/Balpreet1003/LeetCode/tree/main/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3592-inverse-coin-change](https://github.com/Balpreet1003/LeetCode/tree/main/3592-inverse-coin-change/) | Medium |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -51,6 +52,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1143-longest-common-subsequence](https://github.com/Balpreet1003/LeetCode/tree/main/1143-longest-common-subsequence/) | Medium |
 | [1888-minimum-number-of-flips-to-make-the-binary-string-alternating](https://github.com/Balpreet1003/LeetCode/tree/main/1888-minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium |
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
+| [3592-inverse-coin-change](https://github.com/Balpreet1003/LeetCode/tree/main/3592-inverse-coin-change/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
