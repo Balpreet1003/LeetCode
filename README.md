@@ -10,6 +10,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/Balpreet1003/LeetCode/tree/main/0448-find-all-numbers-disappeared-in-an-array/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/Balpreet1003/LeetCode/tree/main/0485-max-consecutive-ones/) | Easy |
 | [0645-set-mismatch](https://github.com/Balpreet1003/LeetCode/tree/main/0645-set-mismatch/) | Easy |
+| [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Balpreet1003/LeetCode/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
 | [1470-shuffle-the-array](https://github.com/Balpreet1003/LeetCode/tree/main/1470-shuffle-the-array/) | Easy |
@@ -44,6 +45,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
+| [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1143-longest-common-subsequence](https://github.com/Balpreet1003/LeetCode/tree/main/1143-longest-common-subsequence/) | Medium |
 | [1888-minimum-number-of-flips-to-make-the-binary-string-alternating](https://github.com/Balpreet1003/LeetCode/tree/main/1888-minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium |
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
@@ -107,6 +109,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Balpreet1003/LeetCode/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
@@ -143,6 +146,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0645-set-mismatch](https://github.com/Balpreet1003/LeetCode/tree/main/0645-set-mismatch/) | Easy |
+| [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Balpreet1003/LeetCode/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 ## Simulation
