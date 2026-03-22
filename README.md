@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/Balpreet1003/LeetCode/tree/main/0448-find-all-numbers-disappeared-in-an-array/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/Balpreet1003/LeetCode/tree/main/0485-max-consecutive-ones/) | Easy |
+| [0518-coin-change-ii](https://github.com/Balpreet1003/LeetCode/tree/main/0518-coin-change-ii/) | Medium |
 | [0645-set-mismatch](https://github.com/Balpreet1003/LeetCode/tree/main/0645-set-mismatch/) | Easy |
 | [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
@@ -45,6 +46,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/Balpreet1003/LeetCode/tree/main/0139-word-break/) | Medium |
+| [0518-coin-change-ii](https://github.com/Balpreet1003/LeetCode/tree/main/0518-coin-change-ii/) | Medium |
 | [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1143-longest-common-subsequence](https://github.com/Balpreet1003/LeetCode/tree/main/1143-longest-common-subsequence/) | Medium |
 | [1888-minimum-number-of-flips-to-make-the-binary-string-alternating](https://github.com/Balpreet1003/LeetCode/tree/main/1888-minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium |
