@@ -16,6 +16,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Balpreet1003/LeetCode/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
 | [1470-shuffle-the-array](https://github.com/Balpreet1003/LeetCode/tree/main/1470-shuffle-the-array/) | Easy |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
+| [1594-maximum-non-negative-product-in-a-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Balpreet1003/LeetCode/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
 | [1929-concatenation-of-array](https://github.com/Balpreet1003/LeetCode/tree/main/1929-concatenation-of-array/) | Easy |
@@ -30,6 +31,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
+| [1594-maximum-non-negative-product-in-a-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [3070-count-submatrices-with-top-left-element-and-sum-less-than-k](https://github.com/Balpreet1003/LeetCode/tree/main/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium |
 ## String
@@ -51,6 +53,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1143-longest-common-subsequence](https://github.com/Balpreet1003/LeetCode/tree/main/1143-longest-common-subsequence/) | Medium |
 | [1420-build-array-where-you-can-find-the-maximum-exactly-k-comparisons](https://github.com/Balpreet1003/LeetCode/tree/main/1420-build-array-where-you-can-find-the-maximum-exactly-k-comparisons/) | Hard |
+| [1594-maximum-non-negative-product-in-a-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
 | [1888-minimum-number-of-flips-to-make-the-binary-string-alternating](https://github.com/Balpreet1003/LeetCode/tree/main/1888-minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium |
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [3592-inverse-coin-change](https://github.com/Balpreet1003/LeetCode/tree/main/3592-inverse-coin-change/) | Medium |
