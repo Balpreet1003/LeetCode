@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numOfSubarrays(vector<int>& arr) {
-        const int MOD = 1000000007;
+        const int MOD = 1e9+7;
         int odd = 0, even = 1; 
         int result = 0;
         int sum = 0;
