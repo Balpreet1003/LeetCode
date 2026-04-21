@@ -29,6 +29,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2906-construct-product-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/2906-construct-product-matrix/) | Medium |
 | [3070-count-submatrices-with-top-left-element-and-sum-less-than-k](https://github.com/Balpreet1003/LeetCode/tree/main/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3301-maximize-the-total-height-of-unique-towers](https://github.com/Balpreet1003/LeetCode/tree/main/3301-maximize-the-total-height-of-unique-towers/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/Balpreet1003/LeetCode/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/Balpreet1003/LeetCode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3592-inverse-coin-change](https://github.com/Balpreet1003/LeetCode/tree/main/3592-inverse-coin-change/) | Medium |
@@ -136,6 +137,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2434-using-a-robot-to-print-the-lexicographically-smallest-string](https://github.com/Balpreet1003/LeetCode/tree/main/2434-using-a-robot-to-print-the-lexicographically-smallest-string/) | Medium |
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3301-maximize-the-total-height-of-unique-towers](https://github.com/Balpreet1003/LeetCode/tree/main/3301-maximize-the-total-height-of-unique-towers/) | Medium |
 ## Heap (Priority Queue)
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -170,6 +172,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Balpreet1003/LeetCode/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
+| [3301-maximize-the-total-height-of-unique-towers](https://github.com/Balpreet1003/LeetCode/tree/main/3301-maximize-the-total-height-of-unique-towers/) | Medium |
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
