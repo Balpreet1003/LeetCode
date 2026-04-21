@@ -23,6 +23,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1929-concatenation-of-array](https://github.com/Balpreet1003/LeetCode/tree/main/1929-concatenation-of-array/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/Balpreet1003/LeetCode/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2149-rearrange-array-elements-by-sign](https://github.com/Balpreet1003/LeetCode/tree/main/2149-rearrange-array-elements-by-sign/) | Medium |
+| [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
 | [2760-longest-even-odd-subarray-with-threshold](https://github.com/Balpreet1003/LeetCode/tree/main/2760-longest-even-odd-subarray-with-threshold/) | Easy |
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [2906-construct-product-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/2906-construct-product-matrix/) | Medium |
@@ -131,6 +132,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1282-group-the-people-given-the-group-size-they-belong-to](https://github.com/Balpreet1003/LeetCode/tree/main/1282-group-the-people-given-the-group-size-they-belong-to/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Balpreet1003/LeetCode/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
+| [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
 | [2434-using-a-robot-to-print-the-lexicographically-smallest-string](https://github.com/Balpreet1003/LeetCode/tree/main/2434-using-a-robot-to-print-the-lexicographically-smallest-string/) | Medium |
 | [2811-check-if-it-is-possible-to-split-array](https://github.com/Balpreet1003/LeetCode/tree/main/2811-check-if-it-is-possible-to-split-array/) | Medium |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Balpreet1003/LeetCode/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
@@ -167,6 +169,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0646-maximum-length-of-pair-chain](https://github.com/Balpreet1003/LeetCode/tree/main/0646-maximum-length-of-pair-chain/) | Medium |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/Balpreet1003/LeetCode/tree/main/1365-how-many-numbers-are-smaller-than-the-current-number/) | Easy |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Balpreet1003/LeetCode/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
+| [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -185,6 +188,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- | ------- |
 | [1420-build-array-where-you-can-find-the-maximum-exactly-k-comparisons](https://github.com/Balpreet1003/LeetCode/tree/main/1420-build-array-where-you-can-find-the-maximum-exactly-k-comparisons/) | Hard |
 | [1524-number-of-sub-arrays-with-odd-sum](https://github.com/Balpreet1003/LeetCode/tree/main/1524-number-of-sub-arrays-with-odd-sum/) | Medium |
+| [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
 | [2906-construct-product-matrix](https://github.com/Balpreet1003/LeetCode/tree/main/2906-construct-product-matrix/) | Medium |
 | [3070-count-submatrices-with-top-left-element-and-sum-less-than-k](https://github.com/Balpreet1003/LeetCode/tree/main/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/Balpreet1003/LeetCode/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
@@ -200,6 +204,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/Balpreet1003/LeetCode/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/Balpreet1003/LeetCode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 <!---LeetCode Topics End-->
