@@ -1,79 +1,61 @@
+#define vi vector
+#define ll long long
+
 class Solution {
+    ll compress_points(ll x, ll y, ll z)
+    {
+        return x*49+((y*7))+z;
+    }
+    vi<ll>get_pnt(ll x)
+    {
+        return {x/49, (x/7)%7, x%7};
+    }
 public:
+    int minGenerations(vector<vector<int>>& points, vector<int>& t) {
+        vi<ll>dist(343, INT_MAX);
+        queue<ll>q;
+        vi<ll>vis;
 
-    int encode(int x, int y, int z)
-    {
-        return x * 49 + y * 7 + z;
-    }
-
-    vector<int> decode(int v)
-    {
-        return {v / 49, (v / 7) % 7, v % 7};
-    }
-
-    int minGenerations(vector<vector<int>>& points, vector<int>& target) {
-
-        const int INF = 1e9;
-
-        vector<int> dist(343, INF);
-
-        queue<int> q;
-        vector<int> active;
-
-        // Initial points
-        for (auto &p : points)
+        for(auto x:points)
         {
-            int id = encode(p[0], p[1], p[2]);
-
-            if (dist[id] == 0)
+            ll y=compress_points(x[0], x[1], x[2]);
+            if(dist[y]==0)
                 continue;
-
-            dist[id] = 0;
-            q.push(id);
-            active.push_back(id);
+            dist[y]=0;
+            q.push(y);
+            vis.push_back(y);
         }
 
-        while (!q.empty())
+        while(!q.empty())
         {
-            int cur = q.front();
+            ll x=q.front();
             q.pop();
-
-            vector<int> a = decode(cur);
-
-            int currentGen = dist[cur];
-
-            int sz = active.size();
-
-            for (int i = 0; i < sz; i++)
+            auto pnt1=get_pnt(x);
+            ll dist1=dist[x];
+            ll sz=vis.size();
+            for(ll i=0;i<sz;i++)
             {
-                int other = active[i];
-
-                if (other == cur)
+                ll y=vis[i];
+                if(y==x)
                     continue;
 
-                vector<int> b = decode(other);
+                auto pnt2=get_pnt(y);
+                ll nx=(pnt1[0]+pnt2[0])/2;
+                ll ny=(pnt1[1]+pnt2[1])/2;
+                ll nz=(pnt1[2]+pnt2[2])/2;
 
-                int nx = (a[0] + b[0]) / 2;
-                int ny = (a[1] + b[1]) / 2;
-                int nz = (a[2] + b[2]) / 2;
+                ll k=compress_points(nx, ny, nz);
+                ll new_dist=max(dist[x], dist[y])+1;
 
-                int nid = encode(nx, ny, nz);
-
-                int ng = max(dist[cur], dist[other]) + 1;
-
-                if (ng < dist[nid])
+                if(dist[k]>new_dist)
                 {
-                    dist[nid] = ng;
-
-                    q.push(nid);
-
-                    active.push_back(nid);
+                    dist[k]=new_dist;
+                    q.push(k);
+                    vis.push_back(k);
                 }
             }
         }
-
-        int targetId = encode(target[0], target[1], target[2]);
-
-        return dist[targetId] == INF ? -1 : dist[targetId];
+        ll tar=compress_points(t[0], t[1], t[2]);
+        return dist[tar]==INT_MAX ? -1 : dist[tar];
     }
 };
