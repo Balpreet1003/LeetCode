@@ -210,4 +210,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2171-removing-minimum-number-of-magic-beans](https://github.com/Balpreet1003/LeetCode/tree/main/2171-removing-minimum-number-of-magic-beans/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/Balpreet1003/LeetCode/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/Balpreet1003/LeetCode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
+## Database
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1757-recyclable-and-low-fat-products](https://github.com/Balpreet1003/LeetCode/tree/main/1757-recyclable-and-low-fat-products/) | Easy |
 <!---LeetCode Topics End-->
