@@ -218,6 +218,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0584-find-customer-referee](https://github.com/Balpreet1003/LeetCode/tree/main/0584-find-customer-referee/) | Easy |
 | [0595-big-countries](https://github.com/Balpreet1003/LeetCode/tree/main/0595-big-countries/) | Easy |
 | [0620-not-boring-movies](https://github.com/Balpreet1003/LeetCode/tree/main/0620-not-boring-movies/) | Easy |
+| [1070-product-sales-analysis-iii](https://github.com/Balpreet1003/LeetCode/tree/main/1070-product-sales-analysis-iii/) | Medium |
 | [1148-article-views-i](https://github.com/Balpreet1003/LeetCode/tree/main/1148-article-views-i/) | Easy |
 | [1174-immediate-food-delivery-ii](https://github.com/Balpreet1003/LeetCode/tree/main/1174-immediate-food-delivery-ii/) | Medium |
 | [1193-monthly-transactions-i](https://github.com/Balpreet1003/LeetCode/tree/main/1193-monthly-transactions-i/) | Medium |
