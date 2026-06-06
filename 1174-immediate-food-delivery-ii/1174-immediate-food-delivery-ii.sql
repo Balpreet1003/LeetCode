@@ -1,7 +1,7 @@
 -- Write your PostgreSQL query statement below
 select
     round(
-        count(*) filter(where order_date = customer_pref_delivery_date)::numeric*100/
+        count(*) filter(where order_date = customer_pref_delivery_date)*100.0/
         count(*)
     , 2)as immediate_percentage
 from
