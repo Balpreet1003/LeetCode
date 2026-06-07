@@ -1,15 +1,54 @@
-# Write your MySQL query statement below
-(SELECT name AS results
-FROM MovieRating JOIN Users USING(user_id)
-GROUP BY name
-ORDER BY COUNT(*) DESC, name
-LIMIT 1)
+-- Write your PostgreSQL query statement below
+with table1 as (
+    select 
+    user_id, cnt
+    from (
+        select 
+            user_id,
+            count(*) as cnt,
+            rank() over (order by count(*) desc) as rnk
+        from MovieRating
+        group by user_id
+    )
+    where rnk=1
+)
 
-UNION ALL
+, table2 as (
+    select 
+        movie_id,
+        avg
+    from (
+        select
+            movie_id,
+            avg(rating) as avg,
+            rank() over (order by avg(rating) desc) as rnk
+        from MovieRating
+        where to_char(created_at, 'YYYY-MM')='2020-02'
+        group by movie_id
+    )
+    where rnk=1
+)
 
-(SELECT title AS results
-FROM MovieRating JOIN Movies USING(movie_id)
-WHERE EXTRACT(YEAR_MONTH FROM created_at) = 202002
-GROUP BY title
-ORDER BY AVG(rating) DESC, title
-LIMIT 1);
+(
+    select 
+        b.name as results
+    from table1 as a
+        left join
+        Users as b
+        on a.user_id=b.user_id
+    order by b.name
+    limit 1
+)
+
+union all
+
+(
+    select 
+        b.title as results
+    from table2 as a
+        left join 
+        Movies as b
+        on a.movie_id=b.movie_id
+    order by b.title
+    limit 1
+)
