@@ -1,12 +1,8 @@
-# Write your MySQL query statement below
-SELECT 
-    CASE 
-        WHEN COUNT(*) = 0 THEN NULL
-        ELSE salary
-    END AS SecondHighestSalary
-FROM (
-    SELECT salary,
-           DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+-- Write your PostgreSQL query statement below
+SELECT (
+    SELECT DISTINCT salary
     FROM Employee
-) t
-WHERE rnk = 2;
+    ORDER BY salary DESC
+    OFFSET 1
+    LIMIT 1
+) AS "SecondHighestSalary";
