@@ -232,6 +232,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1378-replace-employee-id-with-the-unique-identifier](https://github.com/Balpreet1003/LeetCode/tree/main/1378-replace-employee-id-with-the-unique-identifier/) | Easy |
 | [1581-customer-who-visited-but-did-not-make-any-transactions](https://github.com/Balpreet1003/LeetCode/tree/main/1581-customer-who-visited-but-did-not-make-any-transactions/) | Easy |
 | [1661-average-time-of-process-per-machine](https://github.com/Balpreet1003/LeetCode/tree/main/1661-average-time-of-process-per-machine/) | Easy |
+| [1667-fix-names-in-a-table](https://github.com/Balpreet1003/LeetCode/tree/main/1667-fix-names-in-a-table/) | Easy |
 | [1683-invalid-tweets](https://github.com/Balpreet1003/LeetCode/tree/main/1683-invalid-tweets/) | Easy |
 | [1729-find-followers-count](https://github.com/Balpreet1003/LeetCode/tree/main/1729-find-followers-count/) | Easy |
 | [1757-recyclable-and-low-fat-products](https://github.com/Balpreet1003/LeetCode/tree/main/1757-recyclable-and-low-fat-products/) | Easy |
