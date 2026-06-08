@@ -1,4 +1,4 @@
-# Write your MySQL query statement below
+-- Write your PostgreSQL query statement below
 SELECT *
 FROM Users
-WHERE mail REGEXP '^[A-Za-z][A-Za-z0-9_\.\-]*@leetcode(\\?com)?\\.com$';
+WHERE mail ~ '^[A-Za-z][A-Za-z0-9_.-]*@leetcode\.com$';
